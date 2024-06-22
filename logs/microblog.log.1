@@ -1,0 +1,110 @@
+2024-04-04 14:13:22,816 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-04 14:13:29,760 ERROR: Exception on /edit_profile [POST] [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\routes.py", line 90, in edit_profile
+    db.session.commit()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 597, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1972, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1257, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1232, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4296, in flush
+    self._flush(objects)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4431, in _flush
+    with util.safe_reraise():
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4392, in _flush
+    flush_context.execute()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1849, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1989, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('ahmet', 'Naptýn', 5)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-04-04 14:29:43,482 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-04 14:32:04,811 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-04 14:54:59,338 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-04 14:56:42,218 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-12 01:52:31,048 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-12 01:55:33,977 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-12 01:58:21,228 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-20 16:52:58,645 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 13:51:12,384 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 13:53:55,433 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 13:54:29,462 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 13:55:00,064 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 13:59:19,804 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:00:00,921 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:00:10,628 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:00:53,409 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:01:56,979 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:39:21,057 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:39:32,229 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:46:31,531 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-04-25 14:49:28,028 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-05-01 22:32:00,801 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
+2024-05-01 22:32:30,268 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
