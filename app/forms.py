@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 import sqlalchemy as sa
 from app import db
@@ -22,6 +22,13 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Register')
+    roles = RadioField('Roles', choices=[
+        ('0', 'Normal Kullanıcı'),
+        ('1', 'İşitme Merkezi Sahibi'),
+        ('2', 'KBB Doktoru'),
+        ('3', 'İşitme Uzmanları (Odyometris/Odyolog)')
+    ], default='0')
     submit = SubmitField('Register')
 
     def validate_username(self, username):

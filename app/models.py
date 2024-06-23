@@ -26,6 +26,8 @@ class User(UserMixin, db.Model):
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True,
                                              unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
+    roles = so.mapped_column(sa.String(1), index=True)
+    isAdmin = so.mapped_column(sa.Boolean, index=True)
 
     posts: so.WriteOnlyMapped['Post'] = so.relationship(
         back_populates='author')
