@@ -1,0 +1,97 @@
+2024-06-26 11:41:29,266 ERROR: Exception on /job/2 [GET] [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\routes.py", line 233, in job_detail
+    return render_template('job_detail.html', job=job)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\templates\job_detail.html", line 1, in top-level template code
+    {% extends "base.html" %} {% import "bootstrap_wtf.html" as wtf %}{% block
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\templates\base.html", line 111, in top-level template code
+    {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\templates\job_detail.html", line 20, in block 'content'
+    <form method="POST" action="{{ url_for('apply_job', job_id=job.id) }}">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1074, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1063, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'apply_job' with values ['job_id']. Did you mean 'post_job' instead?
+2024-06-26 11:41:46,398 ERROR: Exception on /job/2 [GET] [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\routes.py", line 233, in job_detail
+    return render_template('job_detail.html', job=job)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\templating.py", line 150, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\templating.py", line 131, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\templates\job_detail.html", line 1, in top-level template code
+    {% extends "base.html" %} {% import "bootstrap_wtf.html" as wtf %}{% block
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\templates\base.html", line 111, in top-level template code
+    {% endfor %} {% endif %} {% endwith %} {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\templates\job_detail.html", line 20, in block 'content'
+    <form method="POST" action="{{ url_for('apply_job', job_id=job.id) }}">
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1074, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1063, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\werkzeug\routing\map.py", line 919, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'apply_job' with values ['job_id']. Did you mean 'post_job' instead?
+2024-06-26 11:42:35,815 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
+2024-06-26 11:43:38,127 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
+2024-06-26 13:42:50,754 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
+2024-06-26 13:44:59,431 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
+2024-06-26 14:02:44,473 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
+2024-06-26 15:20:24,192 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
+2024-06-26 20:56:25,474 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]

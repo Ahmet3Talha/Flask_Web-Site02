@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% import "bootstrap_wtf.html" as wtf %} {% block
+content %}
+<div class="container mt-5">
+  <h1 class="mb-4">{{ job.title }}</h1>
+  <h4 class="text-muted">{{ job.company_name }}</h4>
+  <p class="mt-4">{{ job.description }}</p>
+  <p><strong>Requirements:</strong></p>
+  <p>{{ job.requirements }}</p>
+  <p><strong>Location:</strong></p>
+  <div class="embed-responsive embed-responsive-16by9">
+    {{ job.location | safe }}
+  </div>
+  <p><strong>Application Deadline:</strong> {{ job.application_deadline }}</p>
+</div>
+{% endblock %}

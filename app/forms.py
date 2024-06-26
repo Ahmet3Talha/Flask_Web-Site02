@@ -1,10 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, RadioField, TextAreaField, DateTimeField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 import sqlalchemy as sa
 from app import db
 from app.models import User
-from wtforms import TextAreaField
 from wtforms.validators import Length
 
 
@@ -76,3 +75,12 @@ class ResetPasswordForm(FlaskForm):
     password2 = PasswordField(
         'Repeat Password', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Request Password Reset')
+
+class JobListingForm(FlaskForm):
+    title = StringField('Job Title', validators=[DataRequired()])
+    company_name = StringField('Company Name', validators=[DataRequired()])
+    description = TextAreaField('Job Description', validators=[DataRequired()])
+    requirements = TextAreaField('Job Requirements', validators=[DataRequired()])
+    location = TextAreaField('Location (Paste your Google Maps iframe code here)', validators=[DataRequired()])
+    application_deadline = DateTimeField('Application Deadline', format='%Y-%m-%dT%H:%M', validators=[DataRequired()])
+    submit = SubmitField('Create Job Advertisement')

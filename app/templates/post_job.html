@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% import "bootstrap_wtf.html" as wtf %} {% block
+content %}
+<div class="container mt-5">
+  <h1 class="mb-4">Create Job Listing</h1>
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+      {{ form.title.label(class="form-label") }} {{
+      form.title(class="form-control", placeholder="Enter job title") }}
+    </div>
+    <div class="mb-3">
+      {{ form.company_name.label(class="form-label") }} {{
+      form.company_name(class="form-control", placeholder="Enter company name")
+      }}
+    </div>
+    <div class="mb-3">
+      {{ form.description.label(class="form-label") }} {{
+      form.description(class="form-control", placeholder="Enter job
+      description") }}
+    </div>
+    <div class="mb-3">
+      {{ form.requirements.label(class="form-label") }} {{
+      form.requirements(class="form-control", placeholder="Enter job
+      requirements") }}
+    </div>
+    <div class="mb-3">
+      {{ form.location.label(class="form-label") }} {{
+      form.location(class="form-control", placeholder="Paste your Google Maps
+      iframe code here") }}
+    </div>
+    <div class="mb-3">
+      {{ form.application_deadline.label(class="form-label") }} {{
+      form.application_deadline(class="form-control", type="datetime-local") }}
+    </div>
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+</div>
+{% endblock %}

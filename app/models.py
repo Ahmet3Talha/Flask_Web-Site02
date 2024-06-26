@@ -44,6 +44,9 @@ class User(UserMixin, db.Model):
         secondaryjoin=(followers.c.follower_id == id),
         back_populates='following')
     
+    job_listings = db.relationship('JobListing', backref='author', lazy='dynamic')
+    applications = db.relationship('JobApplication', backref='applicant', lazy='dynamic')
+    
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
@@ -125,3 +128,27 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+    
+class JobListing(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(128), nullable=False)
+    company_name = db.Column(db.String(128), nullable=False)
+    description = db.Column(db.Text, nullable=False)
+    requirements = db.Column(db.Text, nullable=False)
+    location = db.Column(db.String(128), nullable=False)
+    posted_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    application_deadline = db.Column(db.DateTime, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    applications = db.relationship('JobApplication', backref='job', lazy='dynamic')
+
+    def __repr__(self):
+        return f'<JobListing {self.title} at {self.company_name}>'
+
+class JobApplication(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    job_id = db.Column(db.Integer, db.ForeignKey('job_listing.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    application_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    def __repr__(self):
+        return f'<JobApplication {self.job.title} by {self.applicant.username}>'

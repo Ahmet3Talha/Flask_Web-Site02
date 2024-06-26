@@ -1,10 +1,13 @@
-2024-05-09 13:42:58,793 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 13:44:39,716 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 13:47:18,687 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 13:53:12,193 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 13:54:25,955 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 13:55:23,620 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 13:57:14,492 ERROR: Exception on /login [POST] [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py:828]
+2024-06-26 21:07:28,781 ERROR: Exception on /logout [GET] [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py:828]
+Traceback (most recent call last):
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,61 +15,70 @@ Traceback (most recent call last):
   File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
     rv = self.handle_user_exception(e)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\routes.py", line 48, in login
-    if user is None or not user.check_password(form.password.data):
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\models.py", line 50, in check_password
-    return check_password_hash(self.password_hash, password)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\werkzeug\security.py", line 120, in check_password_hash
-    method, salt, hashval = pwhash.split("$", 2)
-                            ^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'split'
-2024-05-09 14:04:06,025 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-09 14:11:28,139 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-16 14:01:35,014 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:43]
-2024-05-16 14:28:12,810 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-05-16 14:47:35,116 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-05-16 14:50:15,697 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-05-16 14:53:16,375 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-05-16 14:54:42,797 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-05-16 14:56:36,053 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-22 12:22:46,084 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 01:51:00,249 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 13:16:59,396 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 13:20:04,439 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 15:18:40,436 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 18:38:17,569 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 18:38:27,625 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 18:38:35,086 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 18:38:43,050 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
-2024-06-23 18:39:07,196 ERROR: Exception on /login [POST] [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py:828]
-Traceback (most recent call last):
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1463, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 872, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 870, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 855, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\routes.py", line 55, in login
-    if user is None or not user.check_password(form.password.data):
-                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\models.py", line 55, in check_password
-    return check_password_hash(self.password_hash, password)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\werkzeug\security.py", line 120, in check_password_hash
-    method, salt, hashval = pwhash.split("$", 2)
-                            ^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'split'
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 868, in full_dispatch_request
+    rv = self.preprocess_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\flask\app.py", line 1243, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\routes.py", line 19, in before_request
+    db.session.commit()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 597, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1972, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1257, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1232, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4296, in flush
+    self._flush(objects)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4431, in _flush
+    with util.safe_reraise():
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 4392, in _flush
+    flush_context.execute()
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\orm\persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+           ^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 514, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1849, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1989, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2356, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1970, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\venv\Lib\site-packages\sqlalchemy\engine\default.py", line 924, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) database is locked
+[SQL: UPDATE user SET last_seen=? WHERE user.id = ?]
+[parameters: ('2024-06-26 18:07:23.083503', 8)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2024-06-26 21:07:57,957 INFO: Microblog startup [in C:\Users\06atm\OneDrive\Masaüstü\B.P. 4.dönem\OOP II\microblog\app\__init__.py:45]
